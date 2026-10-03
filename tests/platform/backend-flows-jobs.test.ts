@@ -1,0 +1,41 @@
+import { expect,test } from 'bun:test';
+import { call,harness,user } from './backend-security.test';
+import { createPlatformApp } from '../../server/platform/app';
+import { join } from 'node:path';
+
+test('pinned flow drafts survive restart, stale review is rejected and replay makes one durable case',async()=>{
+  const {app,directory}=harness(),owner=await user(app,'flow-founder',true),customer=await user(app,'flow-customer');
+  const product=(await call(app,'/catalogue',{name:'Sos',description:'Sos',priceSen:1200,packSize:1,publish:true},owner)).json.data;
+  await call(app,'/inventory/receive',{productId:product.id,ownerId:'business',locationId:'hq',quantity:3,reason:'opening stock',status:'available'},owner,{'Idempotency-Key':'flow-opening-stock'});
+  const order=(await call(app,'/orders',{lines:[{productId:product.id,quantity:1}],catalogueVersion:1,fulfilment:'pickup',contactRef:'Counter'},customer,{'Idempotency-Key':'flow-order-001'})).json.data;
+  const definitions=(await call(app,'/flows',undefined,customer)).json.data;
+  const flow=definitions.find((f:{intent:string})=>f.intent==='complaint');
+  const session=(await call(app,'/flow-sessions',{flowId:flow.id},customer)).json.data;
+  const progressed=(await call(app,`/flow-sessions/${session.id}/advance`,{expectedRevision:1,answers:{orderId:order.id,subject:'Missing cap',description:'Cap missing on receipt'}},customer)).json.data;
+  const reviewed=(await call(app,`/flow-sessions/${session.id}/review`,{expectedRevision:progressed.revision},customer)).json.data;
+  const result=await call(app,`/flow-sessions/${session.id}/submit`,{expectedRevision:reviewed.revision},customer,{'Idempotency-Key':'complaint-flow-submit'});
+  expect(result.response.status).toBe(200);
+  const retry=await call(app,`/flow-sessions/${session.id}/submit`,{expectedRevision:reviewed.revision},customer,{'Idempotency-Key':'complaint-flow-submit'});
+  expect(retry.json.data.receipt.entityId).toBe(result.json.data.receipt.entityId);
+  app.close();
+  const reopened=createPlatformApp({databasePath:join(directory,'test.sqlite'),origin:'http://localhost:3000'});
+  expect((await call(reopened,'/cases',undefined,customer)).json.data).toHaveLength(1);
+  expect((await call(reopened,`/flow-sessions/${session.id}`,undefined,customer)).json.data.status).toBe('submitted');
+  reopened.close();
+});
+test('durable local jobs reclaim leases, reject stale callbacks and external research remains unavailable',async()=>{
+  const {app}=harness(),owner=await user(app,'job-founder',true);
+  const queued=(await call(app,'/jobs',{kind:'morning_brief',entityId:'business',skillVersion:'local-v1',scope:'business'},owner,{'Idempotency-Key':'local-job-001'})).json.data;
+  expect(queued.status).toBe('queued');
+  const first=app.jobs.claimJob('worker1',5);
+  expect(first!.id).toBe(queued.id);
+  app.store.save('jobs',{...first!,leaseUntil:new Date(Date.now()-1000).toISOString()});
+  const second=app.jobs.claimJob('worker2',5);
+  expect(second!.attempt).toBe(2);
+  expect(()=>app.jobs.completeJob(first!.id,'worker1',{status:'completed',artifactIds:[],evidenceIds:[],unknownReasons:[]})).toThrow();
+  const completed=app.jobs.executeLocal(second!.id,'worker2');
+  expect(completed.status).toBe('completed');
+  const research=(await call(app,'/jobs',{kind:'research',entityId:'business',skillVersion:'local-v1',scope:'business'},owner,{'Idempotency-Key':'research-job-001'})).json.data;
+  expect(research.status).toBe('blocked');
+  expect(research.reasonCode).toBe('RESEARCH_ADAPTER_UNAVAILABLE');
+});

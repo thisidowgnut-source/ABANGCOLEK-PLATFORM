@@ -1,0 +1,25 @@
+import { chromium } from '@playwright/test';
+import { mkdirSync, readFileSync } from 'node:fs';
+
+const fixture = JSON.parse(readFileSync('var/run/e2e-fixture.json', 'utf8'));
+const directory = 'var/log/platform-visual-review'; mkdirSync(directory, { recursive: true });
+const browser = await chromium.launch({ channel: 'chrome', headless: true });
+const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
+const failures: string[] = []; page.on('pageerror', error => failures.push(error.message));
+await page.goto(fixture.origin); await page.getByRole('heading', { name: 'Colek. Connect. Repeat.' }).waitFor();
+await page.screenshot({ path: `${directory}/01-landing-desktop.png`, fullPage: true });
+const response = await page.request.post(`${fixture.origin}/api/platform/auth/login`, { headers: { Origin: fixture.origin }, data: { email: fixture.founder.email, password: fixture.founder.password } });
+if (!response.ok()) throw new Error('QA login failed.');
+await page.goto(`${fixture.origin}/founder/overview`); await page.getByRole('heading', { name: 'Make the next move.' }).waitFor();
+await page.getByText('Updated ', { exact: false }).first().waitFor();
+await page.screenshot({ path: `${directory}/02-founder-desktop.png`, fullPage: true });
+await page.setViewportSize({ width: 390, height: 844 });
+await page.screenshot({ path: `${directory}/03-founder-mobile.png`, fullPage: true });
+await page.getByRole('button', { name: 'Buka navigasi', exact: true }).click();
+await page.screenshot({ path: `${directory}/04-sidebar-mobile.png`, fullPage: true });
+await page.getByRole('button', { name: 'Tukar tema', exact: true }).click();
+await page.getByRole('button', { name: 'Tutup navigasi', exact: true }).last().click();
+await page.waitForFunction(()=>{const sidebar=document.querySelector('.platform-sidebar');return !sidebar||sidebar.getBoundingClientRect().right<=0;});
+await page.screenshot({ path: `${directory}/05-founder-light.png`, fullPage: true });
+console.info(JSON.stringify({ screenshots: 5, browserErrors: failures, horizontalOverflow: await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth) }));
+await browser.close();

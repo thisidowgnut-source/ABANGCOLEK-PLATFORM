@@ -1,0 +1,133 @@
+/* Workspace navigation: reference-led charcoal, violet and lime system. */
+.ws-sidebar {
+  --ws-bg: #f6f5fb;
+  --ws-surface: #ebe9f3;
+  --ws-border: #dedbe9;
+  --ws-ink: #24232d;
+  --ws-muted: #676374;
+  --ws-active: #8c7dff;
+  display: flex; flex-direction: column; width: 254px; flex-shrink: 0;
+  height: 100%; padding: 28px 18px 18px; background: var(--ws-bg);
+  border-right: 1px solid var(--ws-border); color: var(--ws-ink);
+  font-family: 'DM Sans', sans-serif;
+}
+.ws-sidebar button { color: inherit; transition: background .16s ease, color .16s ease, transform .1s ease; }
+.ws-brand { display: flex; align-items: center; gap: 10px; width: 100%; min-height: 64px; text-align: left; border: 0; background: transparent; cursor: pointer; padding: 0 4px 24px; }
+.ws-brand img { width: 40px; height: 40px; object-fit: contain; }
+.ws-brand strong { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 750; letter-spacing: -.5px; }
+.ws-brand strong > span { color: #17191a; font-size: 10px; background: #cfff5e; border-radius: 6px; padding: 3px 5px; letter-spacing: 0; }
+.ws-brand small { display: block; font-size: 11px; color: var(--ws-muted); margin-top: 5px; }
+.ws-search { display: flex; align-items: center; gap: 8px; width: 100%; min-height: 46px; background: var(--ws-surface); border: 1px solid var(--ws-border); border-radius: 13px; padding: 11px 10px; cursor: pointer; font-size: 11px; margin-bottom: 27px; }
+.ws-search kbd { margin-left: auto; font-size: 9px; color: var(--ws-muted); white-space: nowrap; }
+.ws-navigation { overflow: auto; flex: 1; min-height: 0; padding-bottom: 36px; scrollbar-width: thin; scrollbar-color: var(--ws-border) transparent; }
+.ws-nav-group { margin-bottom: 16px; }
+.ws-group-toggle { display: flex; justify-content: space-between; align-items: center; min-height: 44px; font-size: 10px; text-transform: uppercase; letter-spacing: 1.1px; color: var(--ws-muted); font-weight: 650; padding: 0 10px; cursor: pointer; }
+.ws-group-toggle[aria-expanded=true] svg { transform: rotate(90deg); }
+.ws-route { display: flex; align-items: center; gap: 11px; text-align: left; width: 100%; padding: 12px; font-size: 12px; border: 0; border-radius: 12px; color: var(--ws-muted); background: transparent; cursor: pointer; min-height: 44px; margin-bottom: 4px; }
+.ws-route[aria-current=page] { background: var(--ws-active); color: #171422; font-weight: 750; }
+.ws-route svg { flex-shrink: 0; }
+.ws-running { font-size: 9px; background: #cfff5e; color: #191c12; border-radius: 5px; padding: 3px 5px; margin-left: auto; }
+.ws-account { border-top: 1px solid var(--ws-border); padding-top: 12px; margin-top: 8px; }
+.ws-google, .ws-account > details > summary { display: flex; align-items: center; gap: 10px; width: 100%; min-height: 52px; border: 0; background: transparent; text-align: left; padding: 9px 4px; cursor: pointer; }
+.ws-google > span:nth-child(2), .ws-account > details > summary > span:nth-child(2) { flex: 1; min-width: 0; }
+.ws-account strong { display: block; font-size: 12px; color: var(--ws-ink); font-weight: 650; }
+.ws-account small { display: block; color: var(--ws-muted); font-size: 10px; margin-top: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ws-account svg { color: var(--ws-muted); }
+.ws-account-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--ws-muted); }
+.ws-connected { background: #8aab29; }
+.ws-avatar { display: flex; align-items: center; justify-content: center; border-radius: 11px; width: 34px; height: 34px; background: #b87eed; font-size: 11px; font-weight: 750; color: #25182f; }
+.ws-staff-actions { display: flex; flex-wrap: wrap; gap: 6px; padding: 6px 0; }
+.ws-staff-actions button { min-height: 44px; background: var(--ws-surface); border: 1px solid var(--ws-border); border-radius: 9px; padding: 8px; cursor: pointer; font-size: 11px; }
+.ws-staff-actions button:disabled { opacity: .5; cursor: wait; }
+.ws-error { font-size: 11px; line-height: 1.5; color: #b63445; }
+.ws-sidebar button:focus-visible, .ws-sidebar summary:focus-visible { outline: 3px solid #7b67db; outline-offset: 3px; }
+.ws-sidebar button:active, .app-shell .ws-mobile-header button:active, .app-shell .ws-bottom-nav button:active { transform: scale(.97) !important; transition: transform .1s ease !important; }
+.ws-mobile-menu { max-width: 98px; min-height: 44px; border: 1px solid #d8d4e5; border-radius: 11px; padding: 7px; font-size: 11px; color: #34303f; background: #f6f5fb; }
+.app-shell { background: #f4f3f8 !important; }
+.app-shell main { min-height: 0; }
+.app-shell[data-view=dashboards] main > div:first-child { min-height: 0; overflow: hidden; }
+.app-shell[data-theme=dark] { background: #171719 !important; }
+.app-shell[data-theme=dark] .ws-sidebar { --ws-bg: #0e0e10; --ws-surface: #1d1d22; --ws-border: #2d2d34; --ws-ink: #f4f3f8; --ws-muted: #aaa6b7; }
+.app-shell[data-theme=dark] .ws-sidebar button:focus-visible,
+.app-shell[data-theme=dark] .ws-sidebar summary:focus-visible { outline-color: #cfff5e; }
+.app-shell[data-theme=dark] .ws-error { color: #ff9eaa; }
+.app-shell .ws-mobile-header, .app-shell .ws-bottom-nav { background: #f6f5fb; border-color: #dedbe9; box-shadow: none; }
+.app-shell .ws-mobile-header button { min-height: 44px; }
+.app-shell .ws-mobile-header > button > div > span:first-child { color: #25222f; }
+.app-shell .ws-mobile-header > button > div > span:last-child { color: #6e5ab7; font-size: 9px; }
+.app-shell .ws-mobile-header > div > button { width: 44px; background: #ebe9f3; border-color: #dedbe9; border-radius: 12px; }
+.app-shell .ws-mobile-header > div > button svg { color: #6555b6; }
+.app-shell .ws-bottom-nav { padding-bottom: max(10px, env(safe-area-inset-bottom)); }
+.app-shell .ws-bottom-nav button { min-height: 48px; min-width: 64px; color: #6b6579; border-color: transparent; box-shadow: none; }
+.app-shell .ws-bottom-nav button[aria-current=page] { background: #cfff5e; color: #181b12; border-color: #cfff5e; }
+.app-shell .ws-bottom-nav button svg { color: inherit; }
+.app-shell .ws-mobile-header button:focus-visible, .app-shell .ws-bottom-nav button:focus-visible, .app-shell .ws-mobile-menu:focus-visible { outline: 3px solid #8c7dff; outline-offset: 2px; }
+.app-shell[data-theme=dark] .ws-mobile-header,
+.app-shell[data-theme=dark] .ws-bottom-nav { background: #101012; border-color: #303037; }
+.app-shell[data-theme=dark] .ws-mobile-header > button > div > span:first-child { color: #f4f3f8; }
+.app-shell[data-theme=dark] .ws-mobile-header > button > div > span:last-child { color: #b6a8ff; }
+.app-shell[data-theme=dark] .ws-mobile-header > div > button,
+.app-shell[data-theme=dark] .ws-mobile-menu { background: #232329; border-color: #393840; color: #ddd9ea; }
+.app-shell[data-theme=dark] .ws-mobile-header > div > button svg { color: #b6a8ff; }
+.app-shell[data-theme=dark] .ws-bottom-nav button:not([aria-current=page]) { color: #aaa6b7; }
+@media (hover: hover) and (pointer: fine) {
+  .ws-route:not([aria-current=page]):hover, .ws-search:hover, .ws-staff-actions button:not(:disabled):hover { background: var(--ws-surface); color: var(--ws-ink); }
+  .ws-brand:hover { opacity: .85; }
+  .app-shell .ws-bottom-nav button:not([aria-current=page]):hover { background: #8c7dff; color: #171422; }
+}
+@media (max-width: 767px) { .ws-sidebar { display: none; } }
+@media (max-width: 380px) { .app-shell .ws-mobile-header { padding-left: 12px; padding-right: 12px; }.app-shell .ws-mobile-header > button > div > span:first-child { font-size: 13px; } }
+@media (prefers-reduced-motion: reduce) { .ws-sidebar button, .app-shell .ws-mobile-header button, .app-shell .ws-bottom-nav button { transition: none !important; }.ws-sidebar button:active, .app-shell .ws-mobile-header button:active, .app-shell .ws-bottom-nav button:active { transform: none !important; } }
+/* Compact the brand beside the complete module controls on narrow phones. */
+@media (max-width: 380px) {
+  .app-shell .ws-mobile-header { min-height: 68px; padding-top: 10px; padding-bottom: 10px; gap: 8px; }
+  .app-shell .ws-mobile-header > button { flex: 1; min-width: 0; gap: 7px; }
+  .app-shell .ws-mobile-header > button > img { width: 32px; height: 32px; flex-shrink: 0; }
+  .app-shell .ws-mobile-header > button > div { min-width: 0; }
+  .app-shell .ws-mobile-header > button > div > span:first-child { font-size: 12px; line-height: 1.15; }
+  .app-shell .ws-mobile-header > button > div > span:last-child { display: none; }
+  .app-shell .ws-mobile-header > div { flex-shrink: 0; gap: 6px; }
+  .app-shell .ws-mobile-menu { max-width: 92px; }
+}
+
+/* One navigation system across all modules; icon rail retains every route. */
+.ws-sidebar { padding: 18px 14px 12px; width: 268px; }
+.ws-brand-row { display: flex; align-items: center; gap: 4px; margin-bottom: 15px; }
+.ws-brand { min-height: 48px; padding: 0; min-width: 0; }
+.ws-brand img { width: 38px; height: 38px; flex-shrink: 0; }
+.ws-collapse { display: grid; place-items: center; width: 44px; min-width: 44px; height: 44px; border: 1px solid var(--ws-border); border-radius: 12px; background: var(--ws-surface); cursor: pointer; }
+.ws-workspace-card { display: flex; align-items: center; gap: 9px; min-height: 64px; padding: 10px; border: 1px solid var(--ws-border); border-radius: 17px; background: var(--ws-surface); margin-bottom: 12px; }
+.ws-workspace-mark { display: grid; place-items: center; width: 36px; height: 36px; flex-shrink: 0; background: #cfff5e; color: #17191a; border-radius: 11px; font-size: 12px; font-weight: 800; }
+.ws-workspace-card strong { font-size: 11px; display: block; }
+.ws-workspace-card small { display: block; font-size: 10px; color: var(--ws-muted); margin-top: 4px; }
+.ws-workspace-count { margin-left: auto; font-size: 11px; color: var(--ws-muted); }
+.ws-search { margin-bottom: 12px; }
+.ws-nav-group { margin-bottom: 10px; }
+.ws-group-toggle { width: 100%; border: 0; background: transparent; border-radius: 10px; text-align: left; }
+.ws-group-toggle .ws-group-count { margin-left: auto; padding: 2px 6px; font-size: 10px; letter-spacing: 0; border-radius: 5px; background: var(--ws-surface); }
+.ws-group-toggle svg { margin-left: 7px; }
+.ws-route { font-size: 12px; }
+.ws-route[aria-current=page] { background: #8c7dff; box-shadow: inset 3px 0 0 #cfff5e; }
+.ws-theme-toggle { display: flex; align-items: center; gap: 10px; width: 100%; min-height: 44px; padding: 9px; background: var(--ws-surface); border: 1px solid var(--ws-border); border-radius: 12px; font-size: 12px; cursor: pointer; margin-bottom: 8px; }
+.ws-theme-switch { display: flex; align-items: center; justify-content: flex-end; margin-left: auto; width: 30px; height: 18px; background: #8c7dff; border-radius: 20px; padding: 3px; }
+.ws-theme-switch i { width: 12px; height: 12px; background: #fff; border-radius: 50%; }
+.app-shell[data-theme=light] .ws-theme-switch { justify-content: flex-start; background: #767080; }
+.ws-account-toggle { display: flex; align-items: center; gap: 10px; width: 100%; min-height: 52px; border: 0; background: transparent; text-align: left; padding: 9px 4px; cursor: pointer; }
+.ws-account-toggle > .ws-label { flex: 1; min-width: 0; }
+.ws-staff-actions[hidden] { display: none; }
+.ws-sidebar-collapsed { width: 84px; padding-left: 12px; padding-right: 12px; }
+.ws-sidebar-collapsed .ws-label { display: none; }
+.ws-sidebar-collapsed .ws-brand-row { flex-direction: column; }
+.ws-sidebar-collapsed .ws-brand { justify-content: center; width: 100%; }
+.ws-sidebar-collapsed .ws-workspace-card { justify-content: center; padding: 5px; min-height: 48px; }
+.ws-sidebar-collapsed .ws-search, .ws-sidebar-collapsed .ws-route, .ws-sidebar-collapsed .ws-theme-toggle, .ws-sidebar-collapsed .ws-google, .ws-sidebar-collapsed .ws-account-toggle { justify-content: center; padding: 10px; position: relative; }
+.ws-sidebar-collapsed .ws-nav-group + .ws-nav-group { border-top: 1px solid var(--ws-border); padding-top: 9px; }
+.ws-sidebar-collapsed .ws-running { position: absolute; top: 2px; right: 2px; padding: 0 3px; }
+.ws-sidebar-collapsed .ws-staff-actions { flex-direction: column; }
+.ws-sidebar-collapsed .ws-staff-actions button { font-size: 10px; padding: 4px; overflow-wrap: anywhere; }
+.ws-sidebar-collapsed .ws-error { font-size: 10px; overflow-wrap: anywhere; }
+.ws-sidebar button:focus-visible { outline: 3px solid #7b67db; outline-offset: 2px; }
+.app-shell[data-theme=dark] .ws-sidebar button:focus-visible { outline-color: #cfff5e; }
+@media (hover: hover) and (pointer: fine) {
+  .ws-collapse:hover, .ws-group-toggle:hover, .ws-theme-toggle:hover, .ws-google:hover, .ws-account-toggle:hover { background: var(--ws-surface); }
+}

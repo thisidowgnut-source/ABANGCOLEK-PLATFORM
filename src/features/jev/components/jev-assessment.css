@@ -1,0 +1,26 @@
+.jev-assessment { color: var(--ui-text, #f7f7f9); background: var(--ui-surface, #202124); border: 1px solid var(--ui-border, #37383d); border-radius: 24px; padding: clamp(16px, 2vw, 24px); max-width: 100%; overflow-wrap: anywhere; }
+.jev-assessment__header { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.jev-assessment__icon { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 14px; background: var(--ui-accent, #8c7dff); color: var(--ui-accent-ink, #19191b); }
+.jev-assessment h3 { font-size: 16px; font-weight: 650; margin: 0; }
+.jev-assessment__header p { margin: 4px 0 0; font-size: 13px; color: var(--ui-muted, #b6b5bd); }
+.jev-assessment__badge { margin-left: auto; border: 1px solid var(--ui-border, #37383d); border-radius: 99px; padding: 6px 10px; font-size: 11px; }
+.jev-assessment__notice { font-size: 13px; line-height: 1.65; color: var(--ui-muted, #b6b5bd); margin: 18px 0; }
+.jev-assessment__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 0; }
+.jev-assessment__grid > div { border-radius: 14px; padding: 12px; background: var(--ui-soft, #292a30); }
+.jev-assessment dt { font-size: 11px; color: var(--ui-muted, #b6b5bd); margin-bottom: 6px; }
+.jev-assessment dd { margin: 0; font-weight: 550; font-size: 13px; }
+.jev-assessment__footer { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; padding-top: 18px; }
+.jev-assessment__footer > span { display: inline-flex; align-items: center; gap: 6px; color: var(--ui-muted, #b6b5bd); font-size: 12px; }
+.jev-assessment__actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.jev-assessment button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; background: var(--ui-soft, #292a30); color: var(--ui-text, #f7f7f9); border: 1px solid var(--ui-border, #37383d); border-radius: 99px; padding: 10px 14px; font-size: 12px; font-weight: 550; cursor: pointer; }
+.jev-assessment button.jev-assessment__primary { background: var(--ui-primary, #cfff5e); color: var(--ui-primary-ink, #161916); border-color: transparent; }
+.jev-assessment button:focus-visible { outline: 2px solid var(--ui-accent, #8c7dff); outline-offset: 3px; }
+.jev-assessment button:active { transform: scale(.97) !important; transition: transform .1s ease !important; }
+.jev-assessment__details { padding-top: 16px; margin-top: 16px; border-top: 1px solid var(--ui-border, #37383d); font-size: 12px; line-height: 1.65; }
+.jev-assessment__details ul { list-style: none; padding: 0 0 36px; margin: 12px 0 0; }
+.jev-assessment__details li { display: flex; align-items: flex-start; gap: 6px; padding: 5px 0; }
+.jev-assessment__details li svg { flex-shrink: 0; margin-top: 3px; }
+.jev-assessment__metadata { color: var(--ui-muted, #b6b5bd); font-size: 11px; }
+@media (hover: hover) and (pointer: fine) { .jev-assessment button:hover { filter: brightness(1.08); } }
+@media (max-width: 480px) { .jev-assessment__grid { grid-template-columns: 1fr; } .jev-assessment__actions { width: 100%; } .jev-assessment__actions button { flex: 1; } }
+@media (prefers-reduced-motion: reduce) { .jev-assessment button:active { transition: none !important; } }

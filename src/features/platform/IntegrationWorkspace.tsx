@@ -1,0 +1,6 @@
+import { useResource } from './client';
+import type { RedactedHealth } from '../../../shared/platform-contracts';
+export default function IntegrationWorkspace({ onNavigate }: { onNavigate: (path: string) => void }) {
+  const health = useResource<RedactedHealth[]>('/health');
+  return <section className="platform-legacy"><span className="platform-eyebrow">INTEGRATION WORKSPACE</span><h1>Sambung kerja dengan rekod yang sama.</h1><p>Dokumen, tugasan, calendar dan customer conversations kini menggunakan ruang kerja sebenar. Integrasi luar memerlukan sambungan yang disahkan sebelum digunakan.</p><div className="platform-role-chips">{[['documents','Dokumen'],['tasks','Tugasan'],['calendar','Calendar'],['cases','Customer inbox'],['marketing','Marketing studio']].map(([section,label]) => <button key={section} className="platform-primary" onClick={() => onNavigate(`/founder/${section}`)}>{label}</button>)}</div>{health.error && <p role="alert" className="platform-alert">{health.error}</p>}{health.loading && <p role="status">Menyemak sambungan…</p>}<dl>{health.data?.map(item => <div key={item.component}><dt>{item.component}</dt><dd>{item.status} · {item.reasonCode}</dd></div>)}</dl><p>Rekod cloud sedia ada tidak dipindahkan secara automatik. Tiada demo email, meeting link atau sales chart digunakan sebagai rekod bisnes.</p></section>;
+}

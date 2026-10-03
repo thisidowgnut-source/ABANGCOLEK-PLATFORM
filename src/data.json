@@ -1,0 +1,316 @@
+{
+  "orders": [
+    {
+      "order_id": "AC-ORD-1001",
+      "customer_id": "cust-my-01",
+      "status": "Delivered",
+      "amount": 45.00,
+      "date": "2026-09-15T10:30:00.000Z",
+      "estimated_delivery": "2026-09-18T17:00:00.000Z",
+      "delivered_date": "2026-09-17T14:20:00.000Z",
+      "city": "johor bahru",
+      "items": "3x Kuah Colek Buah Original (500g)"
+    },
+    {
+      "order_id": "AC-ORD-1002",
+      "customer_id": "cust-my-02",
+      "status": "Delivered",
+      "amount": 75.00,
+      "date": "2026-09-16T11:15:00.000Z",
+      "estimated_delivery": "2026-09-20T17:00:00.000Z",
+      "delivered_date": "2026-09-19T16:45:00.000Z",
+      "city": "shah alam",
+      "items": "3x Kuah Colek Buah + 2x Jeruk Mangga Asam Boi"
+    },
+    {
+      "order_id": "AC-ORD-1003",
+      "customer_id": "cust-my-03",
+      "status": "Delayed",
+      "amount": 60.00,
+      "date": "2026-09-22T08:00:00.000Z",
+      "estimated_delivery": "2026-09-25T17:00:00.000Z",
+      "delivered_date": null,
+      "city": "kuala terengganu",
+      "items": "4x Kuah Colek Buah Original (500g)"
+    },
+    {
+      "order_id": "AC-ORD-1004",
+      "customer_id": "cust-my-04",
+      "status": "Refunded",
+      "amount": 35.00,
+      "date": "2026-09-18T14:20:00.000Z",
+      "estimated_delivery": "2026-09-21T17:00:00.000Z",
+      "delivered_date": "2026-09-23T10:00:00.000Z",
+      "city": "kuala lumpur",
+      "items": "2x Kuah Colek Pedas Berapi (Isu Botol Bocor / LEAKAGE)"
+    },
+    {
+      "order_id": "AC-ORD-1005",
+      "customer_id": "cust-my-05",
+      "status": "Delivered",
+      "amount": 550.00,
+      "date": "2026-09-12T09:00:00.000Z",
+      "estimated_delivery": "2026-09-15T17:00:00.000Z",
+      "delivered_date": "2026-09-14T11:00:00.000Z",
+      "city": "kuala terengganu",
+      "items": "Pakej Niaga Ejen Permulaan (50 Botol Kuah Colek)"
+    },
+    {
+      "order_id": "AC-ORD-1006",
+      "customer_id": "cust-my-06",
+      "status": "Delivered",
+      "amount": 30.00,
+      "date": "2026-09-20T16:40:00.000Z",
+      "estimated_delivery": "2026-09-22T17:00:00.000Z",
+      "delivered_date": "2026-09-21T18:30:00.000Z",
+      "city": "johor bahru",
+      "items": "2x Set Buah Potong Segar Celup Kuah Colek (Booth Toppen)"
+    },
+    {
+      "order_id": "AC-ORD-1007",
+      "customer_id": "cust-my-07",
+      "status": "Processing",
+      "amount": 90.00,
+      "date": "2026-09-28T12:00:00.000Z",
+      "estimated_delivery": "2026-10-02T17:00:00.000Z",
+      "delivered_date": null,
+      "city": "bangi",
+      "items": "6x Kuah Colek Buah Original (500g)"
+    },
+    {
+      "order_id": "AC-ORD-1008",
+      "customer_id": "cust-my-08",
+      "status": "Delivered",
+      "amount": 48.00,
+      "date": "2026-09-14T15:10:00.000Z",
+      "estimated_delivery": "2026-09-18T17:00:00.000Z",
+      "delivered_date": "2026-09-17T11:45:00.000Z",
+      "city": "kota bharu",
+      "items": "2x Jeruk Kedondong Rangup + 1x Kuah Colek"
+    },
+    {
+      "order_id": "AC-ORD-1009",
+      "customer_id": "cust-my-09",
+      "status": "Delivered",
+      "amount": 120.00,
+      "date": "2026-09-19T10:15:00.000Z",
+      "estimated_delivery": "2026-09-23T17:00:00.000Z",
+      "delivered_date": "2026-09-22T13:20:00.000Z",
+      "city": "penang",
+      "items": "8x Kuah Colek Buah Original"
+    },
+    {
+      "order_id": "AC-ORD-1010",
+      "customer_id": "cust-my-10",
+      "status": "Delayed",
+      "amount": 75.00,
+      "date": "2026-09-23T09:30:00.000Z",
+      "estimated_delivery": "2026-09-26T17:00:00.000Z",
+      "delivered_date": null,
+      "city": "melaka",
+      "items": "5x Kuah Colek Buah (Kelewatan Kurier Hub Melaka)"
+    },
+    {
+      "order_id": "AC-ORD-1011",
+      "customer_id": "cust-my-11",
+      "status": "Delivered",
+      "amount": 25.00,
+      "date": "2026-09-17T14:00:00.000Z",
+      "estimated_delivery": "2026-09-19T17:00:00.000Z",
+      "delivered_date": "2026-09-18T17:15:00.000Z",
+      "city": "pasir gudang",
+      "items": "1x Balang Jeruk Mangga + 1x Kuah Colek"
+    },
+    {
+      "order_id": "AC-ORD-1012",
+      "customer_id": "cust-my-12",
+      "status": "Delivered",
+      "amount": 65.00,
+      "date": "2026-09-21T11:00:00.000Z",
+      "estimated_delivery": "2026-09-24T17:00:00.000Z",
+      "delivered_date": "2026-09-23T15:30:00.000Z",
+      "city": "ipoh",
+      "items": "4x Colek Padu Crispy Fruit Dip"
+    },
+    {
+      "order_id": "AC-ORD-1013",
+      "customer_id": "cust-my-13",
+      "status": "Processing",
+      "amount": 550.00,
+      "date": "2026-09-28T16:00:00.000Z",
+      "estimated_delivery": "2026-10-02T17:00:00.000Z",
+      "delivered_date": null,
+      "city": "shah alam",
+      "items": "Pakej Niaga Ejen Permulaan (50 Botol) - Stokis Shah Alam"
+    },
+    {
+      "order_id": "AC-ORD-1014",
+      "customer_id": "cust-my-14",
+      "status": "Delivered",
+      "amount": 45.00,
+      "date": "2026-09-15T18:20:00.000Z",
+      "estimated_delivery": "2026-09-18T17:00:00.000Z",
+      "delivered_date": "2026-09-17T12:00:00.000Z",
+      "city": "kuantan",
+      "items": "3x Kuah Colek Buah Original"
+    },
+    {
+      "order_id": "AC-ORD-1015",
+      "customer_id": "cust-my-15",
+      "status": "Delivered",
+      "amount": 35.00,
+      "date": "2026-09-24T13:40:00.000Z",
+      "estimated_delivery": "2026-09-27T17:00:00.000Z",
+      "delivered_date": "2026-09-26T14:10:00.000Z",
+      "city": "johor bahru",
+      "items": "2x Kuah Colek Buah (Booth Pasar Karat)"
+    },
+    {
+      "order_id": "AC-ORD-1016",
+      "customer_id": "cust-my-16",
+      "status": "Delayed",
+      "amount": 50.00,
+      "date": "2026-09-25T10:00:00.000Z",
+      "estimated_delivery": "2026-09-28T17:00:00.000Z",
+      "delivered_date": null,
+      "city": "kuala lumpur",
+      "items": "3x Kuah Colek Buah + 1x Jeruk Kedondong"
+    },
+    {
+      "order_id": "AC-ORD-1017",
+      "customer_id": "cust-my-17",
+      "status": "Delivered",
+      "amount": 2800.00,
+      "date": "2026-09-10T09:00:00.000Z",
+      "estimated_delivery": "2026-09-14T17:00:00.000Z",
+      "delivered_date": "2026-09-13T16:00:00.000Z",
+      "city": "kuala terengganu",
+      "items": "Pakej Stokis Negeri (300 Botol Kuah Colek + Jerux Liur Leleh)"
+    },
+    {
+      "order_id": "AC-ORD-1018",
+      "customer_id": "cust-my-18",
+      "status": "Delivered",
+      "amount": 60.00,
+      "date": "2026-09-18T11:20:00.000Z",
+      "estimated_delivery": "2026-09-21T17:00:00.000Z",
+      "delivered_date": "2026-09-20T15:10:00.000Z",
+      "city": "shah alam",
+      "items": "4x Kuah Colek Buah Original"
+    },
+    {
+      "order_id": "AC-ORD-1019",
+      "customer_id": "cust-my-19",
+      "status": "Delivered",
+      "amount": 45.00,
+      "date": "2026-09-22T14:15:00.000Z",
+      "estimated_delivery": "2026-09-25T17:00:00.000Z",
+      "delivered_date": "2026-09-24T11:30:00.000Z",
+      "city": "johor bahru",
+      "items": "3x Kuah Colek Buah Original"
+    },
+    {
+      "order_id": "AC-ORD-1020",
+      "customer_id": "cust-my-20",
+      "status": "Refunded",
+      "amount": 45.00,
+      "date": "2026-09-19T10:00:00.000Z",
+      "estimated_delivery": "2026-09-22T17:00:00.000Z",
+      "delivered_date": "2026-09-24T09:00:00.000Z",
+      "city": "kuala terengganu",
+      "items": "3x Kuah Colek (Penutup Pecah / SEAL_FAILURE)"
+    }
+  ],
+  "reviews": [
+    {
+      "review_id": "rev-ac-01",
+      "order_id": "AC-ORD-1001",
+      "score": 5,
+      "product_category": "Kuah Colek",
+      "comment_message": "Kuah colek Abang Colek memang padu gila! Pekat, likat, manis dan pedas secukup rasa. Celup dengan jambu batu dan mempelam memang terangkat!",
+      "creation_date": "2026-09-18T10:00:00.000Z",
+      "issue_class": "PRAISE"
+    },
+    {
+      "review_id": "rev-ac-02",
+      "order_id": "AC-ORD-1002",
+      "score": 5,
+      "product_category": "Jeruk & Colek",
+      "comment_message": "Jeruk mangga asam boi dia rangup krup krap, kuah colek sedap sangat sampai licin sebotol. Dah repeat order banyak kali.",
+      "creation_date": "2026-09-20T12:30:00.000Z",
+      "issue_class": "PRAISE"
+    },
+    {
+      "review_id": "rev-ac-03",
+      "order_id": "AC-ORD-1004",
+      "score": 1,
+      "product_category": "Kuah Colek",
+      "comment_message": "Parcel sampai tapi penutup botol retak dan kuah colek meleleh habis dalam kotak parcel courier. Tolong balut bubble wrap tebal lagi dan periksa seal botol sebelum pos!",
+      "creation_date": "2026-09-23T11:15:00.000Z",
+      "issue_class": "LEAKAGE"
+    },
+    {
+      "review_id": "rev-ac-04",
+      "order_id": "AC-ORD-1005",
+      "score": 5,
+      "product_category": "Pakej Ejen",
+      "comment_message": "Alhamdulillah ambil pakej ejen 50 botol kuah colek untuk Terengganu, dalam masa 3 hari dah habis licin kawan-kawan borong. Memang jenama Abang Colek & Styloairpool viral.",
+      "creation_date": "2026-09-16T14:00:00.000Z",
+      "issue_class": "PRAISE"
+    },
+    {
+      "review_id": "rev-ac-05",
+      "order_id": "AC-ORD-1006",
+      "score": 5,
+      "product_category": "Booth Pop-Up",
+      "comment_message": "Beli kat gerai pop-up Toppen Dessert & Coffee Fest Johor Bahru hari tu, krew Styloairpool peramah dan kuah colek melimpah ruah sedap!",
+      "creation_date": "2026-09-22T09:20:00.000Z",
+      "issue_class": "PRAISE"
+    },
+    {
+      "review_id": "rev-ac-06",
+      "order_id": "AC-ORD-1009",
+      "score": 4,
+      "product_category": "Kuah Colek",
+      "comment_message": "Rasa kuah colek memang 5 bintang tiada tandingan, cuma kurier peram parcel kat hub Pulau Pinang sampai 4 hari baru hantar.",
+      "creation_date": "2026-09-23T16:00:00.000Z",
+      "issue_class": "DELIVERY_DELAY"
+    },
+    {
+      "review_id": "rev-ac-07",
+      "order_id": "AC-ORD-1010",
+      "score": 2,
+      "product_category": "Kuah Colek",
+      "comment_message": "Penghantaran lambat sangat ke Melaka dan seal penutup plastik ada longgar sikit, nasib baik tak tumpah banyak. Harap perketatkan QC penutup botol.",
+      "creation_date": "2026-09-27T10:45:00.000Z",
+      "issue_class": "SEAL_FAILURE"
+    },
+    {
+      "review_id": "rev-ac-08",
+      "order_id": "AC-ORD-1017",
+      "score": 5,
+      "product_category": "Pakej Stokis",
+      "comment_message": "Restock stokis 300 botol selamat sampai dengan lori sejuk. Sambutan pelanggan Terengganu untuk Liur Leleh dan Jerux memang mantap!",
+      "creation_date": "2026-09-14T18:00:00.000Z",
+      "issue_class": "PRAISE"
+    },
+    {
+      "review_id": "rev-ac-09",
+      "order_id": "AC-ORD-1012",
+      "score": 5,
+      "product_category": "Colek Padu Crispy",
+      "comment_message": "Colek padu crispy ni memang lain dari yang lain, ada rasa rangup bila gigit. Anak-anak suka sangat makan dengan buah epal hijau.",
+      "creation_date": "2026-09-24T12:10:00.000Z",
+      "issue_class": "PRAISE"
+    },
+    {
+      "review_id": "rev-ac-10",
+      "order_id": "AC-ORD-1020",
+      "score": 1,
+      "product_category": "Kuah Colek",
+      "comment_message": "Botol pecah semasa kurier campak parcel. Servis pelanggan Abang Colek bagus terus refund wang segera tanpa banyak soal. Terima kasih atas tindakan pantas.",
+      "creation_date": "2026-09-25T08:30:00.000Z",
+      "issue_class": "DELIVERY_DAMAGE"
+    }
+  ]
+}

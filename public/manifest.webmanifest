@@ -1,0 +1,16 @@
+{
+  "id": "/",
+  "name": "ABANGCOLEK — Business & Customer Platform",
+  "short_name": "ABANGCOLEK",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#171719",
+  "theme_color": "#171719",
+  "lang": "ms-MY",
+  "icons": [
+    { "src": "/assets/brand/platform-icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/brand/platform-icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ],
+  "description": "Produk, pesanan dan ruang kerja ABANGCOLEK dalam satu platform."
+}

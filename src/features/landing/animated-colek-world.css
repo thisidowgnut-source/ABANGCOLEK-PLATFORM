@@ -1,0 +1,83 @@
+.ac-animated-world {
+  position: absolute;
+  inset: 3% -4% 9% 31%;
+  z-index: 1;
+  pointer-events: none;
+  contain: layout style;
+}
+.ac-aw-canvas { display: block; width: 100%; height: 100%; overflow: visible; }
+.ac-aw-label text { font-family: Outfit, Inter, sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 1px; }
+.ac-aw-art-caption text { font-size: 10px; letter-spacing: 1.7px; }
+.ac-aw-scene { display: none; }
+.ac-aw-scene.is-active { display: inline; }
+.ac-aw-scene:not(.is-active), .ac-aw-scene:not(.is-active) * { animation-play-state: paused !important; }
+.ac-aw-layer { transform-box: fill-box; transform-origin: center; }
+.ac-animated-world[data-phase="transition"] .ac-aw-scene.is-active {
+  animation: ac-aw-enter .62s cubic-bezier(.16, 1, .3, 1) both;
+}
+.ac-animated-world[data-phase="transition"] .is-active .ac-aw-layer {
+  animation: ac-aw-layer-enter .7s cubic-bezier(.16, 1, .3, 1) both;
+}
+.ac-animated-world[data-phase="transition"] .is-active .ac-aw-layer:nth-of-type(2n) { animation-delay: .04s; }
+.ac-aw-orbit-line { fill: none; stroke: #c6b3f5; stroke-width: 1.5px; stroke-dasharray: 4 9; opacity: .3; animation: ac-aw-orbit-path 18s linear infinite; }
+.ac-aw-orbit-line-outer { opacity: .13; animation-direction: reverse; }
+.ac-aw-fruit { transform-box: fill-box; transform-origin: center; animation: ac-aw-float 5.4s ease-in-out infinite; }
+.ac-aw-fruit-guava { animation-delay: -1.8s; animation-duration: 6.2s; }
+.ac-aw-fruit-chilli { animation-delay: -3.5s; animation-duration: 5.9s; }
+.ac-aw-orbit-slice { animation: ac-aw-orbit-fruit 8s ease-in-out infinite; }
+.ac-aw-selection-glow, .ac-aw-floating-dot { animation: ac-aw-glow 4s ease-in-out infinite; }
+.ac-aw-floating-dot { transform-box: fill-box; transform-origin: center; }
+.ac-aw-parcel-flow { animation: ac-aw-conveyor-flow 4.4s linear infinite; }
+.ac-aw-parcel-second { animation-delay: -2.2s; }
+.ac-aw-scan-line { animation: ac-aw-scan 2.8s ease-in-out infinite; }
+.ac-aw-status-light { animation: ac-aw-light 2.8s ease-in-out infinite; }
+.ac-aw-van { animation: ac-aw-van-idle 4.5s ease-in-out infinite; }
+.ac-aw-route { animation: ac-aw-route-flow 2.3s linear infinite; }
+.ac-aw-waypoint { animation: ac-aw-pin 4s ease-in-out infinite; }
+.ac-aw-waypoint-second { animation-delay: -2s; }
+.ac-aw-speed-lines { animation: ac-aw-light 2.6s ease-in-out infinite; }
+.ac-aw-network-route { animation: ac-aw-route-flow 4s linear infinite; }
+.ac-aw-network-secondary { animation-direction: reverse; animation-duration: 6s; }
+.ac-aw-network-pulse { transform-box: fill-box; transform-origin: center; animation: ac-aw-network-pulse 3.5s ease-out infinite; }
+.ac-aw-network-pulse-1 { animation-delay: -.8s; }
+.ac-aw-network-pulse-2 { animation-delay: -1.6s; }
+.ac-aw-network-pulse-3 { animation-delay: -2.4s; }
+
+/* Hard pause includes entrance motion, so visibility/idle suspension never keeps a hidden animation running. */
+.ac-animated-world[data-animation="paused"],
+.ac-animated-world[data-animation="paused"] * {
+  animation: none !important;
+  transition: none !important;
+}
+
+@keyframes ac-aw-enter {
+  from { opacity: 0; transform: translate(calc(var(--ac-aw-direction, 1) * 52px), 15px); }
+  to { opacity: 1; transform: translate(0, 0); }
+}
+@keyframes ac-aw-layer-enter {
+  from { opacity: 0; transform: translate(calc(var(--ac-aw-direction, 1) * 22px), 24px); }
+  to { opacity: 1; transform: translate(0, 0); }
+}
+@keyframes ac-aw-float { 0%, 100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-13px) rotate(3deg); } }
+@keyframes ac-aw-orbit-fruit { 0%, 100% { transform: translate(0, 0) rotate(-6deg); } 50% { transform: translate(28px, -17px) rotate(8deg); } }
+@keyframes ac-aw-orbit-path { to { stroke-dashoffset: -130; } }
+@keyframes ac-aw-glow { 0%, 100% { opacity: .25; } 50% { opacity: .65; } }
+@keyframes ac-aw-conveyor-flow { 0% { transform: translate(-17px, -9px); opacity: .15; } 15%, 85% { opacity: 1; } 100% { transform: translate(24px, 12px); opacity: .15; } }
+@keyframes ac-aw-scan { 0%, 100% { opacity: .12; transform: translateY(-9px); } 45%, 65% { opacity: .9; transform: translateY(14px); } }
+@keyframes ac-aw-light { 0%, 100% { opacity: .3; } 50% { opacity: 1; } }
+@keyframes ac-aw-van-idle { 0%, 100% { transform: translate(-3px, -1px); } 50% { transform: translate(7px, 3px); } }
+@keyframes ac-aw-route-flow { to { stroke-dashoffset: -48; } }
+@keyframes ac-aw-pin { 0%, 100% { opacity: .72; } 50% { opacity: 1; } }
+@keyframes ac-aw-network-pulse { 0% { transform: scale(.65); opacity: .7; } 75%, 100% { transform: scale(2.7); opacity: 0; } }
+
+@media (max-width: 900px) and (min-width: 751px) {
+  .ac-animated-world { inset: 8% -13% 12% 26%; }
+}
+@media (max-width: 750px) {
+  .ac-animated-world { inset: 31% -14% 10% -10%; }
+  .ac-aw-label text { font-size: 11px; }
+  .ac-aw-art-caption { opacity: .65; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ac-animated-world, .ac-animated-world * { animation: none !important; transition: none !important; }
+}

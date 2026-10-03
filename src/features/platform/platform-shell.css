@@ -1,0 +1,62 @@
+.platform-app { min-height:100dvh; }
+.platform-app a { color:inherit; text-decoration:none; }
+.platform-app button { cursor:pointer; border:1px solid var(--ui-border); background:var(--ui-surface); color:var(--ui-text); border-radius:14px; padding:10px 14px; display:inline-flex; align-items:center; justify-content:center; gap:8px; font-weight:600; }
+.platform-app button:disabled { cursor:wait; opacity:.55; }
+.platform-app input,.platform-app select,.platform-app textarea { max-width:100%; border:1px solid var(--ui-border); border-radius:12px; padding:12px; background:var(--ui-bg); color:var(--ui-text); min-height:44px; }
+.platform-app .platform-primary { background:var(--ui-primary); color:var(--ui-primary-ink); border-color:var(--ui-primary); }
+.platform-app .platform-text-button { background:transparent; border-color:transparent; justify-content:flex-start; padding-left:0; }
+.platform-eyebrow { font-size:11px; letter-spacing:.16em; font-weight:700; color:var(--ui-muted); display:flex; align-items:center; gap:8px; }
+.platform-skip { position:fixed; left:12px; top:-100px; z-index:200; padding:14px; background:var(--ui-primary); color:var(--ui-primary-ink)!important; border-radius:8px; }
+.platform-skip:focus { top:12px; }
+.platform-recovery { min-height:80dvh!important; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:40px 20px; gap:16px; text-align:center; }
+.platform-recovery h1 { font-size:clamp(26px,5vw,44px); letter-spacing:-.05em; line-height:1.15; }
+.platform-recovery p { max-width:55ch; color:var(--ui-muted); }
+.platform-network-banner { position:relative; z-index:60; padding:10px 18px; font-size:13px; background:var(--ui-soft); color:var(--ui-warning-text); text-align:center; overflow-wrap:anywhere; }
+.platform-login { display:grid; grid-template-columns:1.15fr 1fr; gap:80px; align-items:center; min-height:100dvh!important; padding:clamp(24px,6vw,90px); max-width:1440px; margin:auto; }
+.platform-login-story h2 { font-size:clamp(42px,6.2vw,86px); line-height:1.02; letter-spacing:-.06em; margin:26px 0; font-weight:600; }
+.platform-login-story h2 em { color:var(--ui-accent-text); font-style:normal; }
+.platform-login-story>p { max-width:44ch; color:var(--ui-muted); font-size:17px; line-height:1.7; }
+.platform-role-chips { display:flex; gap:8px; flex-wrap:wrap; margin-top:30px; }
+.platform-role-chips span { display:flex; align-items:center; gap:6px; border:1px solid var(--ui-border); padding:9px 12px; border-radius:20px; font-size:12px; }
+.platform-auth-card { display:flex; flex-direction:column; gap:18px; border:1px solid var(--ui-border); background:var(--ui-surface); border-radius:30px; padding:32px; min-width:0; }
+.platform-auth-card h1 { font-size:32px; letter-spacing:-.05em; line-height:1.15; font-weight:600; }
+.platform-auth-card p { color:var(--ui-muted); font-size:14px; line-height:1.6; }
+.platform-auth-card label { display:flex; flex-direction:column; gap:7px; font-size:13px; font-weight:600; }
+.platform-field-hint { font-size:12px!important; color:var(--ui-muted); font-weight:400; line-height:1.5; }
+.platform-alert { border:1px solid var(--ui-danger-text); color:var(--ui-danger-text)!important; padding:12px; border-radius:12px; overflow-wrap:anywhere; }
+.platform-workspace { display:flex; min-height:100dvh; }
+.platform-sidebar { width:244px; flex-shrink:0; height:100dvh; position:sticky; top:0; padding:26px 16px 16px; background:var(--ui-surface); border-right:1px solid var(--ui-border); display:flex; flex-direction:column; gap:24px; }
+.platform-brand { display:flex; align-items:center; gap:10px; padding:0 8px; }
+.platform-brand>span { display:grid; place-items:center; width:42px; height:42px; background:var(--ui-primary); color:var(--ui-primary-ink); border-radius:14px; }
+.platform-brand strong { font-size:16px; letter-spacing:-.04em; }
+.platform-brand small { display:block; letter-spacing:.16em; font-size:9px; color:var(--ui-muted); margin-top:2px; }
+.platform-brand-logo { width:64px; height:48px; object-fit:contain; flex-shrink:0; }
+.platform-space-badge { display:flex; justify-content:space-between; align-items:center; border:1px solid var(--ui-border); background:var(--ui-soft); border-radius:12px; padding:12px; font-size:12px; }
+.platform-sidebar nav { display:flex; flex-direction:column; gap:4px; overflow:auto; min-height:0; flex:1; padding-bottom:36px; }
+.platform-sidebar nav button { border:0; border-radius:12px; background:transparent; justify-content:flex-start; padding:10px 13px; font-size:12px; color:var(--ui-muted); min-height:44px; flex-shrink:0; }
+.platform-sidebar nav button span { flex:1; text-align:left; }
+.platform-sidebar nav button.is-active { background:var(--ui-primary); color:var(--ui-primary-ink); }
+.platform-sidebar footer { border-top:1px solid var(--ui-border); padding:16px 8px 0; display:flex; flex-direction:column; gap:12px; }
+.platform-sidebar footer>div { display:flex; gap:8px; }
+.platform-user-name { font-size:13px; font-weight:600; overflow-wrap:anywhere; }
+.platform-user-name small { display:block; font-size:11px; font-weight:400; color:var(--ui-muted); margin-top:4px; }
+.platform-workspace-body { flex:1; min-width:0; }
+.platform-topbar { display:flex; justify-content:space-between; gap:16px; align-items:center; height:80px; padding:18px 32px; border-bottom:1px solid var(--ui-border); }
+.platform-topbar>div { display:flex; align-items:center; gap:14px; min-width:0; }
+.platform-topbar>div>span { display:flex; align-items:center; gap:8px; font-size:13px; color:var(--ui-muted); }
+.platform-topbar strong { color:var(--ui-text); }
+.platform-saved { font-size:11px!important; }
+.platform-saved>span { display:block; width:6px; height:6px; background:var(--ui-success-text); border-radius:50%; }
+.platform-role-select select { font-size:12px; padding:8px 10px; }
+.platform-menu-toggle,.platform-menu-close { display:none!important; }
+.platform-main { padding:30px 32px 48px; min-height:calc(100dvh - 80px)!important; }
+.platform-legacy { min-width:0; }
+.platform-legacy>.app-shell { height:calc(100dvh - 170px); min-height:600px; border:1px solid var(--ui-border); border-radius:20px; overflow:hidden; }
+.platform-notice { margin-bottom:14px; padding:12px 16px; background:var(--ui-soft); border-radius:12px; color:var(--ui-muted); font-size:12px; }
+.platform-flow-shell { max-width:900px; margin:auto; min-height:100dvh; padding:20px; }
+.platform-flow-shell>header { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:30px; }
+.platform-flow-shell>header>span { display:flex; align-items:center; gap:8px; font-size:12px; font-weight:700; }
+@media (hover:hover) and (pointer:fine) { .platform-app button:hover { border-color:var(--ui-accent); } .platform-sidebar nav button:not(.is-active):hover { background:var(--ui-soft); color:var(--ui-text); } }
+@media(max-width:1100px) { .platform-sidebar { width:216px; padding:20px 12px; } .platform-topbar { padding:16px 20px; } .platform-main { padding:24px 20px; } .platform-login { gap:36px; } }
+@media(max-width:767px) { .platform-sidebar { position:fixed; z-index:100; width:270px; left:-290px; transition:left .18s ease; } .platform-sidebar.is-open { left:0; } .platform-menu-close { display:inline-flex!important; position:absolute; right:12px; top:76px; } .platform-scrim { position:fixed; inset:0; background:#0009!important; border:0!important; border-radius:0!important; z-index:99; } .platform-menu-toggle { display:inline-flex!important; padding:10px!important; } .platform-topbar { padding:12px 16px; height:auto; min-height:72px; flex-wrap:wrap; } .platform-topbar>div { gap:10px; } .platform-saved { display:none!important; } .platform-main { padding:22px 16px; } .platform-login { display:flex; flex-direction:column; gap:30px; padding:28px 16px; align-items:stretch; } .platform-login-story h2 { font-size:46px; } .platform-login-story>p,.platform-role-chips { display:none; } .platform-auth-card { padding:24px 20px; border-radius:24px; } .platform-auth-card h1 { font-size:28px; } .platform-flow-shell { padding:16px; } .platform-flow-shell>header>span { font-size:10px; } }
+@media(prefers-reduced-motion:reduce) { .platform-sidebar { transition:none; } }

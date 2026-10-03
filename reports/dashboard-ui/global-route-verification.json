@@ -1,0 +1,245 @@
+{
+  "dark": [
+    {
+      "content": 3208,
+      "headings": [
+        "Selamat datang kembali.",
+        "Di mana bisnes berkembang",
+        "Perlu perhatian"
+      ],
+      "theme": "dark",
+      "view": "dashboards"
+    },
+    {
+      "content": 528,
+      "headings": [
+        "Pangkalan Data Pesanan Langsung"
+      ],
+      "theme": "dark",
+      "view": "orders"
+    },
+    {
+      "content": 3138,
+      "headings": [
+        "Logistik Bas Ekspres & Radar Penjejakan Ejen (Google Maps)"
+      ],
+      "theme": "dark",
+      "view": "bus_freight"
+    },
+    {
+      "content": 1916,
+      "headings": [
+        "Abang Colek Fleet & Logistics Map (Google Maps)Live Map"
+      ],
+      "theme": "dark",
+      "view": "maps"
+    },
+    {
+      "content": 2488,
+      "headings": [
+        "Maklum Balas & Ulasan Pelanggan"
+      ],
+      "theme": "dark",
+      "view": "reviews"
+    },
+    {
+      "content": 2164,
+      "headings": [
+        "Laporan Analisis Perniagaan"
+      ],
+      "theme": "dark",
+      "view": "reports"
+    },
+    {
+      "content": 3145,
+      "headings": [
+        "Pusat Penyelidikan Operasi & Enjin JEV System-1"
+      ],
+      "theme": "dark",
+      "view": "discovery"
+    },
+    {
+      "content": 536,
+      "headings": [
+        "Execution Trace",
+        "Virtual Assistant"
+      ],
+      "theme": "dark",
+      "view": "chat"
+    },
+    {
+      "content": 5256,
+      "headings": [
+        "Prestasi & Kecekapan Agen AI (Agent Performance)"
+      ],
+      "theme": "dark",
+      "view": "agent_performance"
+    },
+    {
+      "content": 8176,
+      "headings": [
+        "Gedung Plugin & Sambungan Pihak Ketiga",
+        "Cara Ia Berfungsi (Plugins Architecture)"
+      ],
+      "theme": "dark",
+      "view": "plugins"
+    },
+    {
+      "content": 810,
+      "headings": [
+        "Gmail Inbox & Operations"
+      ],
+      "theme": "dark",
+      "view": "gmail"
+    },
+    {
+      "content": 403,
+      "headings": [
+        "Google Calendar"
+      ],
+      "theme": "dark",
+      "view": "calendar"
+    },
+    {
+      "content": 532,
+      "headings": [
+        "Google Tasks"
+      ],
+      "theme": "dark",
+      "view": "tasks"
+    },
+    {
+      "content": 508,
+      "headings": [
+        "Google Docs & Drive"
+      ],
+      "theme": "dark",
+      "view": "docs"
+    },
+    {
+      "content": 422,
+      "headings": [
+        "Google Sheets"
+      ],
+      "theme": "dark",
+      "view": "sheets"
+    },
+    {
+      "content": 1656,
+      "headings": [
+        "Google Forms"
+      ],
+      "theme": "dark",
+      "view": "forms"
+    },
+    {
+      "content": 469,
+      "headings": [
+        "Google Meet Video Spaces",
+        "Google Meet Conference Rooms"
+      ],
+      "theme": "dark",
+      "view": "meet"
+    },
+    {
+      "content": 447,
+      "headings": [
+        "Google Chat Spaces"
+      ],
+      "theme": "dark",
+      "view": "chat_workspace"
+    }
+  ],
+  "light": [
+    {
+      "content": 3208,
+      "theme": "light",
+      "view": "dashboards"
+    },
+    {
+      "content": 528,
+      "theme": "light",
+      "view": "orders"
+    },
+    {
+      "content": 3633,
+      "theme": "light",
+      "view": "bus_freight"
+    },
+    {
+      "content": 1417,
+      "theme": "light",
+      "view": "maps"
+    },
+    {
+      "content": 2488,
+      "theme": "light",
+      "view": "reviews"
+    },
+    {
+      "content": 2164,
+      "theme": "light",
+      "view": "reports"
+    },
+    {
+      "content": 3145,
+      "theme": "light",
+      "view": "discovery"
+    },
+    {
+      "content": 536,
+      "theme": "light",
+      "view": "chat"
+    },
+    {
+      "content": 5256,
+      "theme": "light",
+      "view": "agent_performance"
+    },
+    {
+      "content": 8176,
+      "theme": "light",
+      "view": "plugins"
+    },
+    {
+      "content": 810,
+      "theme": "light",
+      "view": "gmail"
+    },
+    {
+      "content": 403,
+      "theme": "light",
+      "view": "calendar"
+    },
+    {
+      "content": 532,
+      "theme": "light",
+      "view": "tasks"
+    },
+    {
+      "content": 508,
+      "theme": "light",
+      "view": "docs"
+    },
+    {
+      "content": 422,
+      "theme": "light",
+      "view": "sheets"
+    },
+    {
+      "content": 1656,
+      "theme": "light",
+      "view": "forms"
+    },
+    {
+      "content": 469,
+      "theme": "light",
+      "view": "meet"
+    },
+    {
+      "content": 447,
+      "theme": "light",
+      "view": "chat_workspace"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+/* Shared appearance contract for every workspace route and overlay. */
+.app-shell {
+  --ui-bg:#f1f0f5; --ui-surface:#ffffff; --ui-soft:#eae8f0;
+  --ui-text:#202025; --ui-muted:#62606f; --ui-border:#dcd9e4;
+  --ui-input-border:#817b8f;
+  --ui-primary:#cfff5e; --ui-primary-ink:#191c12;
+  --ui-accent:#8c7dff; --ui-accent-ink:#171422; --ui-lilac:#b87eed;
+  --ui-accent-text:#6552c9;
+  --ui-success-text:#157351; --ui-warning-text:#8a5b0b; --ui-danger-text:#b42c42;
+  --ui-inverse:#171719; --ui-inverse-text:#f5f4f8;
+  --ui-shadow:0 8px 28px #17171908;
+  background:var(--ui-bg); color:var(--ui-text); font-family:'DM Sans',sans-serif;
+  color-scheme:light;
+}
+.app-shell[data-theme=dark] {
+  --ui-bg:#171719; --ui-surface:#222225; --ui-soft:#2b2b30;
+  --ui-input-border:#85818f;
+  --ui-text:#f5f4f8; --ui-muted:#b5b2c1; --ui-border:#37363e;
+  --ui-shadow:0 8px 28px #00000018; color-scheme:dark;
+  --ui-accent-text:#b6a8ff;
+  --ui-success-text:#83dfb5; --ui-warning-text:#f4cb75; --ui-danger-text:#ff98a7;
+}
+.app-shell *, .app-shell *::before, .app-shell *::after { box-sizing:border-box; }
+.app-shell button, .app-shell input, .app-shell textarea, .app-shell select { font-family:inherit; }
+.app-shell button { min-height:44px; }
+.app-shell input, .app-shell textarea, .app-shell select { accent-color:var(--ui-accent); }
+.app-shell.platform-app :is(input,textarea,select) { border-color:var(--ui-input-border); }
+.app-shell input::placeholder, .app-shell textarea::placeholder { color:var(--ui-muted); opacity:.8; }
+.app-shell :is(button,input,textarea,select,summary,a):focus-visible { outline:3px solid var(--ui-accent); outline-offset:3px; }
+.app-shell button:active { transform:scale(.97) !important; transition:transform .1s ease !important; }
+.app-shell main { min-height:0; }
+.app-shell main > div:first-child { scrollbar-width:thin; scrollbar-color:var(--ui-border) transparent; }
+.app-shell [role=dialog] { color:var(--ui-text); }
+@media(max-width:767px) {
+  .app-shell main { padding-bottom:calc(140px + env(safe-area-inset-bottom,28px)) !important; }
+  .app-shell[data-view=dashboards] main { padding-bottom:0 !important; }
+}
+@media(max-width:480px) {
+  .app-shell .ws-mobile-header { flex-wrap:wrap; gap:10px; padding:12px 16px; }
+  .app-shell .ws-mobile-header > button { flex-basis:100%; }
+  .app-shell .ws-mobile-header > div { width:100%; justify-content:flex-end; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .app-shell *, .app-shell *::before, .app-shell *::after { scroll-behavior:auto !important; }
+  .app-shell button:active { transform:none !important; transition:none !important; }
+}
